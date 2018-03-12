@@ -10,4 +10,8 @@ export class BackendService {
   getAllEmployees(): Observable<Employee> {
     return <Observable<Employee>>this.http.get('/api/employees');
   }
+
+  createNewEmployee(e: Employee): Observable<Employee> {
+    return <Observable<Employee>>this.http.post('/api/employees', e);
+  }
 }
